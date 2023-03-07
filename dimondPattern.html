@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Pattern in JS</title>
+  </head>
+  <script>
+    var i, j;
+    var space;
+    let str = "";
+    printDiamond(5);
+    function printDiamond(n) {
+      space = n - 1;
+
+      // run loop (parent loop)
+      // till number of rows
+      for (i = 0; i < n; i++) {
+        // loop for initially space,
+        // space before star printing
+        for (j = 0; j < space; j++) str += " ";
+
+        // Print i+1 stars
+        for (j = 0; j <= i; j++) str += "* ";
+
+        str += "\n";
+        space--;
+      }
+      // console.log(str);
+
+      // Repeat again in
+      // reverse order
+      space = 0;
+      // run loop (parent loop)
+      // till number of rows
+      for (i = n; i > 0; i--) {
+        // loop for initially space,
+        // before star printing
+        for (j = 0; j < space; j++) str += " ";
+
+        // Pri stars
+        for (j = 0; j < i; j++) str += "* ";
+        str += "\n";
+        space++;
+      }
+      console.log(str);
+    }
+  </script>
+  <body></body>
+</html>
